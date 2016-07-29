@@ -16,6 +16,42 @@ public class Pokemon {
     public Pokemon() {
     }
 
+    public Pokemon(long id, String pokemonId, double latitude, double longitude, int expirationTime) {
+        this.id = id;
+        this.pokemonId = pokemonId;
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.expirationTime = expirationTime;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Pokemon pokemon = (Pokemon) o;
+
+        if (id != pokemon.id) return false;
+        if (Double.compare(pokemon.latitude, latitude) != 0) return false;
+        if (Double.compare(pokemon.longitude, longitude) != 0) return false;
+        if (expirationTime != pokemon.expirationTime) return false;
+        return pokemonId != null ? pokemonId.equals(pokemon.pokemonId) : pokemon.pokemonId == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result;
+        long temp;
+        result = (int) (id ^ (id >>> 32));
+        result = 31 * result + (pokemonId != null ? pokemonId.hashCode() : 0);
+        temp = Double.doubleToLongBits(latitude);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        temp = Double.doubleToLongBits(longitude);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        result = 31 * result + expirationTime;
+        return result;
+    }
+
     public long getId() {
         return id;
     }
