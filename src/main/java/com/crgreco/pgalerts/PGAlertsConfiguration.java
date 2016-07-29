@@ -1,4 +1,6 @@
 package com.crgreco.pgalerts;
 
-public class PGAlertsConfiguration {
+import io.dropwizard.Configuration;
+
+public class PGAlertsConfiguration extends Configuration {
 }

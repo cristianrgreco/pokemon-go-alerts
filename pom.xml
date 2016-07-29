@@ -17,6 +17,8 @@
 
     <dependencies>
 
+        <!-- Dropwizard -->
+
         <dependency>
             <groupId>io.dropwizard</groupId>
             <artifactId>dropwizard-core</artifactId>
