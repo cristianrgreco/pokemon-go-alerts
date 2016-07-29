@@ -22,7 +22,8 @@ public class DefaultPokevisionIT {
     @Test
     public void shouldReturnListOfPokemon() {
         Client httpClient = new JerseyClientBuilder(RULE.getEnvironment()).build("testClient");
+
         Pokevision pokevision = new DefaultPokevision(httpClient);
-        assertThat(pokevision.fetchPokemon(), hasSize(greaterThan(0)));
+        assertThat(pokevision.fetchPokemon(51.497121994573, -0.12494802474976), hasSize(greaterThan(0)));
     }
 }

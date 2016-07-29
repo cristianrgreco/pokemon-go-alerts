@@ -14,8 +14,8 @@ public class DefaultPokevision implements Pokevision {
     }
 
     @Override
-    public List<Pokemon> fetchPokemon() {
-        return httpClient.target("https://pokevision.com/map/data/51.5202093/-0.1225081")
+    public List<Pokemon> fetchPokemon(double latitude, double longitude) {
+        return httpClient.target(String.format("https://pokevision.com/map/data/%f/%f", latitude, longitude))
                 .request().get(PokevisionResponse.class).getPokemon();
     }
 }

@@ -6,5 +6,5 @@ import java.util.List;
 
 public interface Pokevision {
 
-    List<Pokemon> fetchPokemon();
+    List<Pokemon> fetchPokemon(double latitude, double longitude);
 }
