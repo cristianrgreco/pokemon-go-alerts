@@ -39,3 +39,18 @@ https://pokemon-go-rest-api.herokuapp.com/?latitude=51.497121994573&longitude=-0
   }
 ]
 ```
+
+## Pokevision Maintenance
+
+This API includes a healthcheck to determine whether Pokevision is currently down or in maintenance: https://pokemon-go-rest-api.herokuapp.com/admin/healthcheck
+
+```json
+{
+  "deadlocks": {
+    "healthy": true
+  },
+  "pokevision": {
+    "healthy": true
+  }
+}
+```
