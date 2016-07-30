@@ -12,3 +12,6 @@ logging:
     com.crgreco.pgalerts: DEBUG
   appenders:
     - type: console
+
+pokevision:
+  uri: https://pokevision.com/map/data/%f/%f

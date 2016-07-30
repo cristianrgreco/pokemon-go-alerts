@@ -1,5 +1,6 @@
 package com.crgreco.pgalerts;
 
+import com.crgreco.pgalerts.pokevision.PokevisionConfiguration;
 import com.crgreco.pgalerts.pokevision.PokevisionHealthCheck;
 import io.dropwizard.Application;
 import io.dropwizard.client.JerseyClientBuilder;
@@ -21,7 +22,8 @@ public class PGAlertsApplication extends Application<PGAlertsConfiguration> {
     public void run(PGAlertsConfiguration configuration, Environment environment) throws Exception {
         Client httpClient = new JerseyClientBuilder(environment).build(getName());
 
-        PokevisionHealthCheck pokevisionHealthCheck = new PokevisionHealthCheck(httpClient);
+        PokevisionConfiguration pokevisionConfiguration = configuration.getPokevisionConfiguration();
+        PokevisionHealthCheck pokevisionHealthCheck = new PokevisionHealthCheck(httpClient, pokevisionConfiguration);
         environment.healthChecks().register("pokevision", pokevisionHealthCheck);
 
         FilterRegistration.Dynamic cors = environment.servlets().addFilter("CORS", CrossOriginFilter.class);

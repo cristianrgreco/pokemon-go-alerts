@@ -9,14 +9,16 @@ import java.util.List;
 public class PokevisionHealthCheck extends HealthCheck {
 
     private final Client httpClient;
+    private final PokevisionConfiguration configuration;
 
-    public PokevisionHealthCheck(Client httpClient) {
+    public PokevisionHealthCheck(Client httpClient, PokevisionConfiguration configuration) {
         this.httpClient = httpClient;
+        this.configuration = configuration;
     }
 
     @Override
     protected Result check() throws Exception {
-        String uri = String.format("https://pokevision.com/map/data/%f/%f", 51.497121994573, -0.12494802474976);
+        String uri = String.format(configuration.getUri(), 51.497121994573, -0.12494802474976);
         List<Pokemon> pokemon = httpClient.target(uri).request().get(PokevisionResponse.class).getPokemon();
 
         if (pokemon.isEmpty()) {
