@@ -1,4 +1,4 @@
-package com.crgreco.pgalerts.domain;
+package com.crgreco.pokemongo.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;

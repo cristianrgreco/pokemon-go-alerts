@@ -1,13 +1,13 @@
-package com.crgreco.pgalerts;
+package com.crgreco.pokemongo;
 
-import com.crgreco.pgalerts.pokevision.PokevisionConfiguration;
+import com.crgreco.pokemongo.pokevision.PokevisionConfiguration;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.dropwizard.Configuration;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
-public class PGAlertsConfiguration extends Configuration {
+public class PokemonGoConfiguration extends Configuration {
 
     @Valid
     @NotNull

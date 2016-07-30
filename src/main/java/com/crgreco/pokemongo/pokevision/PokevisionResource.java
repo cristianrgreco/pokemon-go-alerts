@@ -1,4 +1,4 @@
-package com.crgreco.pgalerts.pokevision;
+package com.crgreco.pokemongo.pokevision;
 
 import com.codahale.metrics.annotation.Timed;
 import org.slf4j.Logger;

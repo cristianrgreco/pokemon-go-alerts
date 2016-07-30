@@ -110,7 +110,7 @@
                             <transformers>
                                 <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
                                 <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <mainClass>com.crgreco.pgalerts.PGAlertsApplication</mainClass>
+                                    <mainClass>com.crgreco.pokemongo.PokemonGoApplication</mainClass>
                                 </transformer>
                             </transformers>
                         </configuration>

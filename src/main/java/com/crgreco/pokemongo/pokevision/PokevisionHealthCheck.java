@@ -1,7 +1,7 @@
-package com.crgreco.pgalerts.pokevision;
+package com.crgreco.pokemongo.pokevision;
 
 import com.codahale.metrics.health.HealthCheck;
-import com.crgreco.pgalerts.domain.Pokemon;
+import com.crgreco.pokemongo.domain.Pokemon;
 
 import javax.ws.rs.client.Client;
 import java.util.List;

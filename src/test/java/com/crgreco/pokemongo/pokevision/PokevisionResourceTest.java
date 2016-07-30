@@ -1,6 +1,6 @@
-package com.crgreco.pgalerts.pokevision;
+package com.crgreco.pokemongo.pokevision;
 
-import com.crgreco.pgalerts.domain.Pokemon;
+import com.crgreco.pokemongo.domain.Pokemon;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.dropwizard.jackson.Jackson;
 import io.dropwizard.testing.junit.ResourceTestRule;

@@ -1,4 +1,4 @@
-package com.crgreco.pgalerts.domain;
+package com.crgreco.pokemongo.domain;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.dropwizard.jackson.Jackson;

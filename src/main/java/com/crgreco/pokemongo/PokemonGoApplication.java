@@ -1,9 +1,9 @@
-package com.crgreco.pgalerts;
+package com.crgreco.pokemongo;
 
-import com.crgreco.pgalerts.pokevision.DefaultPokevision;
-import com.crgreco.pgalerts.pokevision.PokevisionConfiguration;
-import com.crgreco.pgalerts.pokevision.PokevisionHealthCheck;
-import com.crgreco.pgalerts.pokevision.PokevisionResource;
+import com.crgreco.pokemongo.pokevision.DefaultPokevision;
+import com.crgreco.pokemongo.pokevision.PokevisionConfiguration;
+import com.crgreco.pokemongo.pokevision.PokevisionHealthCheck;
+import com.crgreco.pokemongo.pokevision.PokevisionResource;
 import io.dropwizard.Application;
 import io.dropwizard.client.JerseyClientBuilder;
 import io.dropwizard.setup.Environment;
@@ -18,10 +18,10 @@ import static org.eclipse.jetty.servlets.CrossOriginFilter.ALLOWED_HEADERS_PARAM
 import static org.eclipse.jetty.servlets.CrossOriginFilter.ALLOWED_METHODS_PARAM;
 import static org.eclipse.jetty.servlets.CrossOriginFilter.ALLOWED_ORIGINS_PARAM;
 
-public class PGAlertsApplication extends Application<PGAlertsConfiguration> {
+public class PokemonGoApplication extends Application<PokemonGoConfiguration> {
 
     @Override
-    public void run(PGAlertsConfiguration configuration, Environment environment) throws Exception {
+    public void run(PokemonGoConfiguration configuration, Environment environment) throws Exception {
         Client httpClient = new JerseyClientBuilder(environment).build(getName());
 
         PokevisionConfiguration pokevisionConfiguration = configuration.getPokevisionConfiguration();
@@ -38,6 +38,6 @@ public class PGAlertsApplication extends Application<PGAlertsConfiguration> {
     }
 
     public static void main(String[] args) throws Exception {
-        new PGAlertsApplication().run(args);
+        new PokemonGoApplication().run(args);
     }
 }

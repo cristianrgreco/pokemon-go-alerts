@@ -1,4 +1,4 @@
-package com.crgreco.pgalerts.pokevision;
+package com.crgreco.pokemongo.pokevision;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.hibernate.validator.constraints.NotEmpty;

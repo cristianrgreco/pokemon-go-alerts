@@ -1,6 +1,6 @@
-package com.crgreco.pgalerts.pokevision;
+package com.crgreco.pokemongo.pokevision;
 
-import com.crgreco.pgalerts.domain.Pokemon;
+import com.crgreco.pokemongo.domain.Pokemon;
 import com.google.common.collect.ImmutableMap;
 import org.junit.Before;
 import org.junit.Test;
