@@ -51,7 +51,7 @@ public class PokevisionResourceTest {
 
         String expected = mapper.writeValueAsString(pokemonListFixture);
 
-        List<Pokemon> pokemonList = resources.client().target("/pokevision")
+        List<Pokemon> pokemonList = resources.client().target("/")
                 .queryParam("latitude", 1.0)
                 .queryParam("longitude", -1.0)
                 .request()

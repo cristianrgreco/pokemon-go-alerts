@@ -31,7 +31,7 @@ public class PokevisionResourceIT {
     public void shouldReturnListOfPokemon() {
         Client httpClient = ClientBuilder.newClient();
 
-        Response response = httpClient.target(String.format("http://localhost:%d/pokevision", RULE.getLocalPort()))
+        Response response = httpClient.target(String.format("http://localhost:%d/", RULE.getLocalPort()))
                 .queryParam("latitude", 51.497121994573)
                 .queryParam("longitude", -0.12494802474976)
                 .request()
@@ -45,7 +45,7 @@ public class PokevisionResourceIT {
     public void shouldReturn400andErrorMessageIfQueryParamsNotProvided() throws Exception {
         Client httpClient = ClientBuilder.newClient();
 
-        Response response = httpClient.target(String.format("http://localhost:%d/pokevision", RULE.getLocalPort()))
+        Response response = httpClient.target(String.format("http://localhost:%d/", RULE.getLocalPort()))
                 .request()
                 .get(Response.class);
 
