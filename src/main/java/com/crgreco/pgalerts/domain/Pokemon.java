@@ -10,7 +10,6 @@ public class Pokemon {
     private String pokemonId;
     private double latitude;
     private double longitude;
-    @JsonProperty("expiration_time")
     private int expirationTime;
 
     public Pokemon() {
@@ -84,10 +83,12 @@ public class Pokemon {
         this.longitude = longitude;
     }
 
+    @JsonProperty("expirationTime")
     public int getExpirationTime() {
         return expirationTime;
     }
 
+    @JsonProperty("expiration_time")
     public void setExpirationTime(int expirationTime) {
         this.expirationTime = expirationTime;
     }
