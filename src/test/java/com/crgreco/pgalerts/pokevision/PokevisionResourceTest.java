@@ -33,9 +33,9 @@ public class PokevisionResourceTest {
     @Before
     public void setup() {
         when(pokevision.fetchPokemon(1.0, -1.0)).thenReturn(asList(
-                new Pokemon(1L, "001", 1.1, -1.1, 1000001),
-                new Pokemon(2L, "002", 1.2, -1.2, 1000002),
-                new Pokemon(3L, "003", 1.3, -1.3, 1000003)
+                new Pokemon(1L, "001:1.1:-1.1", "001", "Bulbasaur", 1.1, -1.1, 1000001),
+                new Pokemon(2L, "002:1.2:-1.2", "002", "Ivysaur", 1.2, -1.2, 1000002),
+                new Pokemon(3L, "003:1.3:-1.3", "003", "Venusaur", 1.3, -1.3, 1000003)
         ));
     }
 

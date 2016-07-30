@@ -7,7 +7,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class Pokemon {
 
     private long id;
+    private String uuid;
     private String pokemonId;
+    private String name;
     private double latitude;
     private double longitude;
     private int expirationTime;
@@ -15,9 +17,11 @@ public class Pokemon {
     public Pokemon() {
     }
 
-    public Pokemon(long id, String pokemonId, double latitude, double longitude, int expirationTime) {
+    public Pokemon(long id, String uuid, String pokemonId, String name, double latitude, double longitude, int expirationTime) {
         this.id = id;
+        this.uuid = uuid;
         this.pokemonId = pokemonId;
+        this.name = name;
         this.latitude = latitude;
         this.longitude = longitude;
         this.expirationTime = expirationTime;
@@ -34,7 +38,9 @@ public class Pokemon {
         if (Double.compare(pokemon.latitude, latitude) != 0) return false;
         if (Double.compare(pokemon.longitude, longitude) != 0) return false;
         if (expirationTime != pokemon.expirationTime) return false;
-        return pokemonId != null ? pokemonId.equals(pokemon.pokemonId) : pokemon.pokemonId == null;
+        if (uuid != null ? !uuid.equals(pokemon.uuid) : pokemon.uuid != null) return false;
+        if (pokemonId != null ? !pokemonId.equals(pokemon.pokemonId) : pokemon.pokemonId != null) return false;
+        return name != null ? name.equals(pokemon.name) : pokemon.name == null;
     }
 
     @Override
@@ -42,7 +48,9 @@ public class Pokemon {
         int result;
         long temp;
         result = (int) (id ^ (id >>> 32));
+        result = 31 * result + (uuid != null ? uuid.hashCode() : 0);
         result = 31 * result + (pokemonId != null ? pokemonId.hashCode() : 0);
+        result = 31 * result + (name != null ? name.hashCode() : 0);
         temp = Double.doubleToLongBits(latitude);
         result = 31 * result + (int) (temp ^ (temp >>> 32));
         temp = Double.doubleToLongBits(longitude);
@@ -59,12 +67,28 @@ public class Pokemon {
         this.id = id;
     }
 
+    public String getUuid() {
+        return uuid;
+    }
+
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
+    }
+
     public String getPokemonId() {
         return pokemonId;
     }
 
     public void setPokemonId(String pokemonId) {
         this.pokemonId = String.format("%03d", Integer.parseInt(pokemonId));
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public double getLatitude() {

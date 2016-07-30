@@ -1,21 +1,27 @@
 [
   {
     "id": 1,
+    "uuid": "001:1.1:-1.1",
     "pokemonId": "001",
+    "name": "Bulbasaur",
     "latitude": 1.1,
     "longitude": -1.1,
     "expirationTime": 1000001
   },
   {
     "id": 2,
+    "uuid": "002:1.2:-1.2",
     "pokemonId": "002",
+    "name": "Ivysaur",
     "latitude": 1.2,
     "longitude": -1.2,
     "expirationTime": 1000002
   },
   {
     "id": 3,
+    "uuid": "003:1.3:-1.3",
     "pokemonId": "003",
+    "name": "Venusaur",
     "latitude": 1.3,
     "longitude": -1.3,
     "expirationTime": 1000003

@@ -12,6 +12,11 @@ class PokevisionResponse {
     public PokevisionResponse() {
     }
 
+    public PokevisionResponse(String status, List<Pokemon> pokemon) {
+        this.status = status;
+        this.pokemon = pokemon;
+    }
+
     public String getStatus() {
         return status;
     }
