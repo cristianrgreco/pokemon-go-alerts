@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -Ddw.http.port=$PORT -Ddw.http.adminPort=$PORT -jar target/pokemon-go-alerts-1.0-SNAPSHOT.jar server target/classes/conf.yml
+web: java $JAVA_OPTS -Ddw.server.applicationConnectors.port=$PORT -Ddw.server.adminConnectors.port=$PORT -jar target/pokemon-go-alerts-1.0-SNAPSHOT.jar server target/classes/conf.yml
