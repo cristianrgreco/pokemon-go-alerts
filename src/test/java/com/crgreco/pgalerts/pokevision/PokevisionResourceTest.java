@@ -2,7 +2,6 @@ package com.crgreco.pgalerts.pokevision;
 
 import com.crgreco.pgalerts.domain.Pokemon;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.type.CollectionType;
 import io.dropwizard.jackson.Jackson;
 import io.dropwizard.testing.junit.ResourceTestRule;
 import org.junit.After;
@@ -47,8 +46,10 @@ public class PokevisionResourceTest {
     
     @Test
     public void serializesToJSON() throws Exception {
-        CollectionType pokemonListType = mapper.getTypeFactory().constructCollectionType(List.class, Pokemon.class);
-        String expected = mapper.writeValueAsString(mapper.readValue(fixture("fixtures/pokemon-list.json"), pokemonListType));
+        List<Pokemon> pokemonListFixture = mapper.readValue(fixture("fixtures/pokemon-list.json"),
+                mapper.getTypeFactory().constructCollectionType(List.class, Pokemon.class));
+
+        String expected = mapper.writeValueAsString(pokemonListFixture);
 
         List<Pokemon> pokemonList = resources.client().target("/pokevision")
                 .queryParam("latitude", 1.0)
