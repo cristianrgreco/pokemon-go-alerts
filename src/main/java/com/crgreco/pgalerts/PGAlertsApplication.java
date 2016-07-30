@@ -4,8 +4,16 @@ import com.crgreco.pgalerts.pokevision.PokevisionHealthCheck;
 import io.dropwizard.Application;
 import io.dropwizard.client.JerseyClientBuilder;
 import io.dropwizard.setup.Environment;
+import org.eclipse.jetty.servlets.CrossOriginFilter;
 
+import javax.servlet.DispatcherType;
+import javax.servlet.FilterRegistration;
 import javax.ws.rs.client.Client;
+import java.util.EnumSet;
+
+import static org.eclipse.jetty.servlets.CrossOriginFilter.ALLOWED_HEADERS_PARAM;
+import static org.eclipse.jetty.servlets.CrossOriginFilter.ALLOWED_METHODS_PARAM;
+import static org.eclipse.jetty.servlets.CrossOriginFilter.ALLOWED_ORIGINS_PARAM;
 
 public class PGAlertsApplication extends Application<PGAlertsConfiguration> {
 
@@ -15,6 +23,12 @@ public class PGAlertsApplication extends Application<PGAlertsConfiguration> {
 
         PokevisionHealthCheck pokevisionHealthCheck = new PokevisionHealthCheck(httpClient);
         environment.healthChecks().register("pokevision", pokevisionHealthCheck);
+
+        FilterRegistration.Dynamic cors = environment.servlets().addFilter("CORS", CrossOriginFilter.class);
+        cors.setInitParameter(ALLOWED_ORIGINS_PARAM, "*");
+        cors.setInitParameter(ALLOWED_HEADERS_PARAM, "Content-Type,Accept,Origin");
+        cors.setInitParameter(ALLOWED_METHODS_PARAM, "OPTIONS,GET,PUT,POST,DELETE,HEAD");
+        cors.addMappingForUrlPatterns(EnumSet.allOf(DispatcherType.class), true, "*");
     }
 
     public static void main(String[] args) throws Exception {
