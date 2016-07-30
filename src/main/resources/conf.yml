@@ -9,7 +9,7 @@ server:
 logging:
   level: INFO
   loggers:
-    com.crgreco.pgalerts: DEBUG
+    com.crgreco.pokemongo: DEBUG
   appenders:
     - type: console
 
