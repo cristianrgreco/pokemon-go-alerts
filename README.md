@@ -1,6 +1,6 @@
 # Pokemon Go REST API
 
-[![Build Status](https://travis-ci.org/cristianrgreco/pokemon-go-alerts.svg?branch=master)](https://travis-ci.org/cristianrgreco/pokemon-go-alerts)
+[![Build Status](https://travis-ci.org/cristianrgreco/pokemon-go-rest-api.svg?branch=master)](https://travis-ci.org/cristianrgreco/pokemon-go-rest-api)
 
 *CORS-enabled REST API for querying Pokemon GO.*
 
